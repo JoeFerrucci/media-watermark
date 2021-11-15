@@ -10,7 +10,6 @@ import UIKit
 import AVFoundation
 
 let kMediaContentDefaultScale: CGFloat = 1
-let kProcessedTemporaryVideoFileName = "/processed.mov"
 let kMediaContentTimeValue: Int64 = 1
 let kMediaContentTimeScale: Int32 = 30
 
@@ -107,7 +106,7 @@ extension MediaProcessor {
     }
     
     private func processedMoviePath() -> URL {
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + kProcessedTemporaryVideoFileName
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + outputFilename
         return URL(fileURLWithPath: documentsPath)
     }
     
